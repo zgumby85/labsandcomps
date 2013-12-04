@@ -1,0 +1,55 @@
+<script type="text/javascript">
+var h = new Object(); 
+
+  function show_workers(id, hash){
+    var element =  document.getElementById("" + id);
+    if(h[id]){
+      element.innerHTML = "";
+      h[id] = false;
+    } else {
+      var text = "<table> <tr>" +
+      "<th>Student id</th>" +
+      "<th>Student name</th>" +
+      "<th>Student phone</th>" +
+      "</tr>";
+
+      hash.forEach(function(entry) {
+        text += "<tr><td>" + entry.student_id +
+                "</td><td>" + entry.student_name +
+                "</td><td>" + entry.student_phone + "</td></tr>";
+      });
+      element.innerHTML = text;
+      h[id] = true;
+    }
+  }
+</script>
+
+<h1>Listing labs</h1>
+
+<table>
+  <tr>
+    <th>Room number</th>
+    <th>Room addr</th>
+    <th>Number comp</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @labs.each do |lab| %>
+  <tr  >
+    <td onclick="show_workers(<%= lab.id %>, <%= lab.get_workers() %>);"><%= lab.room_number %></td>
+    <td><%= lab.room_addr %></td>
+    <td><%= lab.number_comp %></td>
+    <td><%= link_to 'Show', lab %></td>
+    <td><%= link_to 'Edit', edit_lab_path(lab) %></td>
+    <td><%= link_to 'Destroy', lab, confirm: 'Are you sure?', method: :delete %></td>
+    <td id="<%= lab.id %>"></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lab', new_lab_path %>

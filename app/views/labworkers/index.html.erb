@@ -1,0 +1,27 @@
+<h1>Listing labworkers</h1>
+
+<table>
+  <tr>
+    <th>Student id</th>
+    <th>Student name</th>
+    <th>Student phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @labworkers.each do |labworker| %>
+  <tr>
+    <td><%= labworker.student_id %></td>
+    <td><%= labworker.student_name %></td>
+    <td><%= labworker.student_phone %></td>
+    <td><%= link_to 'Show', labworker %></td>
+    <td><%= link_to 'Edit', edit_labworker_path(labworker) %></td>
+    <td><%= link_to 'Destroy', labworker, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Labworker', new_labworker_path %>

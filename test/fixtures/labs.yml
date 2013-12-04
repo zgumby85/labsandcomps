@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  room_number: 1
+  room_addr: MyString
+  number_comp: 1
+
+two:
+  room_number: 1
+  room_addr: MyString
+  number_comp: 1

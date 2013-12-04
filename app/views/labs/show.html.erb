@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Room number:</b>
+  <%= @lab.room_number %>
+</p>
+
+<p>
+  <b>Room addr:</b>
+  <%= @lab.room_addr %>
+</p>
+
+<p>
+  <b>Number comp:</b>
+  <%= @lab.number_comp %>
+</p>
+
+
+<%= link_to 'Edit', edit_lab_path(@lab) %> |
+<%= link_to 'Back', labs_path %>
