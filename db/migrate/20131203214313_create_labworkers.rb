@@ -1,7 +1,7 @@
-class CreateLabworkers < ActiveRecord::Migration
+class CreateComputers < ActiveRecord::Migration
   def change
-    create_table :labworkers do |t|
-      t.string :student_id
+    create_table :computers do |t|
+      t.string :computer_id
       t.string :student_name
       t.integer :student_phone
       t.integer :lab_id
